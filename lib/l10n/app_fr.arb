@@ -1,0 +1,25 @@
+{
+  "homeWelcomeMessage": "Votre santé vous appartient",
+  "homeGreetingMorning": "Bonjour",
+  "homeGreetingAfternoon": "Bon après-midi",
+  "homeGreetingEvening": "Bonsoir",
+  
+  "featureAssessmentTitle": "Évaluation du risque",
+  "featureAssessmentSubtitle": "Test rapide et confidentiel",
+  "featureCentersTitle": "Centres de dépistage",
+  "featureCentersSubtitle": "Trouver un centre près de vous",
+  "featureChatbotTitle": "Assistant santé",
+  "featureChatbotSubtitle": "Posez vos questions en privé",
+  "featureContentTitle": "Guides & ressources",
+  "featureContentSubtitle": "Informations sur la santé",
+  
+  "statsAssessments": "évaluations",
+  "statsNearestCenter": "plus proche",
+  
+  "navHome": "Accueil",
+  "navMap": "Carte",
+  "navChat": "Chat",
+  "navProfile": "Profil",
+  
+  "selectLanguage": "Choisir une langue"
+}

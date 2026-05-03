@@ -1,0 +1,25 @@
+{
+  "homeWelcomeMessage": "صحتك ملكك",
+  "homeGreetingMorning": "صباح الخير",
+  "homeGreetingAfternoon": "مساء الخير",
+  "homeGreetingEvening": "مساء الخير",
+  
+  "featureAssessmentTitle": "تقييم المخاطر",
+  "featureAssessmentSubtitle": "اختبار سريع وسري",
+  "featureCentersTitle": "مراكز الفحص",
+  "featureCentersSubtitle": "ابحث عن مركز قريب منك",
+  "featureChatbotTitle": "المساعد الصحي",
+  "featureChatbotSubtitle": "اطرح أسئلتك بخصوصية",
+  "featureContentTitle": "الأدلة والموارد",
+  "featureContentSubtitle": "معلومات صحية",
+  
+  "statsAssessments": "تقييمات",
+  "statsNearestCenter": "الأقرب",
+  
+  "navHome": "الرئيسية",
+  "navMap": "الخريطة",
+  "navChat": "الدردشة",
+  "navProfile": "الملف الشخصي",
+  
+  "selectLanguage": "اختر اللغة"
+}
