@@ -17,7 +17,7 @@ class HeroBannerCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(28),
         boxShadow: [
           BoxShadow(
-            color: const Color(0xFF2E8B57).withOpacity(0.18),
+            color: const Color(0xFF2E8B57).withValues(alpha: 46),
             blurRadius: 24,
             offset: const Offset(0, 12),
           ),
@@ -148,7 +148,7 @@ class DashboardMenuCard extends StatelessWidget {
                 width: 48,
                 height: 48,
                 decoration: BoxDecoration(
-                  color: accentColor.withOpacity(0.14),
+                  color: accentColor.withValues(alpha: 36),
                   shape: BoxShape.circle,
                 ),
                 child: Icon(icon, color: accentColor, size: 24),
@@ -258,9 +258,9 @@ class AppointmentCard extends StatelessWidget {
                     width: 92,
                     height: 92,
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.10),
+                      color: Colors.white.withValues(alpha: 26),
                       borderRadius: BorderRadius.circular(22),
-                      border: Border.all(color: Colors.white.withOpacity(0.18)),
+                      border: Border.all(color: Colors.white.withValues(alpha: 46)),
                     ),
                     child: const Icon(
                       Icons.local_hospital_outlined,
@@ -276,7 +276,7 @@ class AppointmentCard extends StatelessWidget {
                     width: 72,
                     height: 72,
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.12),
+                      color: Colors.white.withValues(alpha: 31),
                       shape: BoxShape.circle,
                     ),
                     child: const Icon(
@@ -293,7 +293,7 @@ class AppointmentCard extends StatelessWidget {
                     width: 132,
                     height: 14,
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.45),
+                      color: Colors.white.withValues(alpha: 115),
                       borderRadius: BorderRadius.circular(999),
                     ),
                   ),
