@@ -41,18 +41,10 @@ class _FrenchDashboardScreenState extends State<FrenchDashboardScreen> {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 16),
-            child: TextButton.icon(
-              onPressed: () {},
-              icon: const Icon(Icons.language_rounded, size: 18),
-              label: const Text('FR / AR'),
-              style: TextButton.styleFrom(
-                foregroundColor: const Color(0xFF1D5F35),
-                backgroundColor: const Color(0xFFE8F2EA),
-                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(999),
-                ),
-              ),
+            child: LanguageSwitchButton(
+              onPressed: () {
+                Navigator.of(context).popUntil((route) => route.isFirst);
+              },
             ),
           ),
         ],

@@ -17,7 +17,7 @@ class HeroBannerCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(28),
         boxShadow: [
           BoxShadow(
-            color: const Color(0xFF2E8B57).withValues(alpha: 46),
+            color: const Color(0xFF2E8B57).withAlpha(46),
             blurRadius: 24,
             offset: const Offset(0, 12),
           ),
@@ -110,6 +110,29 @@ class SectionHeader extends StatelessWidget {
   }
 }
 
+class LanguageSwitchButton extends StatelessWidget {
+  const LanguageSwitchButton({super.key, required this.onPressed});
+
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton.icon(
+      onPressed: onPressed,
+      icon: const Icon(Icons.language_rounded, size: 18),
+      label: const Text('FR / AR'),
+      style: TextButton.styleFrom(
+        foregroundColor: const Color(0xFF1D5F35),
+        backgroundColor: const Color(0xFFE8F2EA),
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(999),
+        ),
+      ),
+    );
+  }
+}
+
 class DashboardMenuCard extends StatelessWidget {
   const DashboardMenuCard({
     super.key,
@@ -148,7 +171,7 @@ class DashboardMenuCard extends StatelessWidget {
                 width: 48,
                 height: 48,
                 decoration: BoxDecoration(
-                  color: accentColor.withValues(alpha: 36),
+                  color: accentColor.withAlpha(36),
                   shape: BoxShape.circle,
                 ),
                 child: Icon(icon, color: accentColor, size: 24),
@@ -258,9 +281,9 @@ class AppointmentCard extends StatelessWidget {
                     width: 92,
                     height: 92,
                     decoration: BoxDecoration(
-                      color: Colors.white.withValues(alpha: 26),
+                      color: Colors.white.withAlpha(26),
                       borderRadius: BorderRadius.circular(22),
-                      border: Border.all(color: Colors.white.withValues(alpha: 46)),
+                      border: Border.all(color: Colors.white.withAlpha(46)),
                     ),
                     child: const Icon(
                       Icons.local_hospital_outlined,
@@ -276,7 +299,7 @@ class AppointmentCard extends StatelessWidget {
                     width: 72,
                     height: 72,
                     decoration: BoxDecoration(
-                      color: Colors.white.withValues(alpha: 31),
+                      color: Colors.white.withAlpha(31),
                       shape: BoxShape.circle,
                     ),
                     child: const Icon(
@@ -293,7 +316,7 @@ class AppointmentCard extends StatelessWidget {
                     width: 132,
                     height: 14,
                     decoration: BoxDecoration(
-                      color: Colors.white.withValues(alpha: 115),
+                      color: Colors.white.withAlpha(115),
                       borderRadius: BorderRadius.circular(999),
                     ),
                   ),

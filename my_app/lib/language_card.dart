@@ -28,7 +28,7 @@ class LanguageCard extends StatelessWidget {
             border: Border.all(color: const Color(0xFFBBDCC5), width: 1.4),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withValues(alpha: 10),
+                color: Colors.black.withAlpha(10),
                 blurRadius: 18,
                 offset: const Offset(0, 8),
               ),
