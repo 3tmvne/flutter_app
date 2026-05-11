@@ -1,0 +1,114 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Utilisateur {
+  id               String   @id @default(uuid())
+  email            String   @unique
+  password_hash    String?
+  profil_type      String?
+  langue_preferee  String?
+  est_anonyme      Boolean  @default(false)
+  region           String?
+  ville            String?
+  date_inscription DateTime @default(now())
+
+  evaluations      Evaluation[]
+  notifications    Notification[]
+  chatbot_messages ChatbotMessage[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Center {
+  id          String   @id @default(uuid())
+  nom         String
+  adresse     String?
+  ville       String?
+  region      String?
+  telephone   String?
+  email       String?
+  description String?
+
+  evaluations Evaluation[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Content {
+  id           String   @id @default(uuid())
+  titre        String
+  description  String?
+  type         String   // "question", "scenario", "case_study"
+  categorie    String?
+  langue       String   @default("fr") // "fr", "ar", "en"
+  difficulte   String?  // "facile", "moyen", "difficile"
+  ordre        Int?
+  est_actif    Boolean  @default(true)
+
+  evaluations  Evaluation[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Evaluation {
+  id           String   @id @default(uuid())
+  utilisateur  Utilisateur @relation(fields: [utilisateurId], references: [id], onDelete: Cascade)
+  utilisateurId String
+  center       Center   @relation(fields: [centerId], references: [id], onDelete: Cascade)
+  centerId     String
+  content      Content  @relation(fields: [contentId], references: [id], onDelete: Cascade)
+  contentId    String
+
+  score        Int?
+  statut       String   @default("en_cours") // "en_cours", "completée", "échouée"
+  date_debut   DateTime @default(now())
+  date_fin     DateTime?
+  remarques    String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([utilisateurId, contentId])
+}
+
+model Notification {
+  id          String   @id @default(uuid())
+  utilisateur Utilisateur @relation(fields: [utilisateurId], references: [id], onDelete: Cascade)
+  utilisateurId String
+
+  titre       String
+  message     String
+  type        String?  // "info", "warning", "success", "error"
+  lue         Boolean  @default(false)
+  date_envoi  DateTime @default(now())
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ChatbotMessage {
+  id          String   @id @default(uuid())
+  utilisateur Utilisateur @relation(fields: [utilisateurId], references: [id], onDelete: Cascade)
+  utilisateurId String
+
+  message     String
+  reponse     String?
+  type        String?  // "question", "reponse_bot"
+  date_envoi  DateTime @default(now())
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
