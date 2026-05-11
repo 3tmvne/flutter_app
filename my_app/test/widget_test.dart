@@ -5,26 +5,41 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:my_app/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
+  testWidgets('Language home screen renders', (WidgetTester tester) async {
     await tester.pumpWidget(const ScreenAwareApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    expect(find.text('ScreenAware'), findsOneWidget);
+    expect(find.text('Your privacy is fully protected'), findsOneWidget);
+    expect(find.text('French'), findsOneWidget);
+    expect(find.text('Arabic'), findsOneWidget);
+  });
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+  testWidgets('French dashboard opens from the home screen', (
+    WidgetTester tester,
+  ) async {
+    await tester.pumpWidget(const ScreenAwareApp());
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    await tester.tap(find.text('French'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Menu rapide'), findsOneWidget);
+    expect(find.text('Évaluation des risques'), findsOneWidget);
+  });
+
+  testWidgets('Arabic home screen opens from the home screen', (
+    WidgetTester tester,
+  ) async {
+    await tester.pumpWidget(const ScreenAwareApp());
+
+    await tester.tap(find.text('Arabic'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('الرئيسية'), findsOneWidget);
+    expect(find.text('أهلاً بك'), findsOneWidget);
   });
 }

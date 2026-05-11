@@ -52,7 +52,7 @@ class LanguageScreen extends StatelessWidget {
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.green.withOpacity(0.10),
+                          color: Colors.green.withAlpha(26),
                           blurRadius: 24,
                           offset: const Offset(0, 10),
                         ),
